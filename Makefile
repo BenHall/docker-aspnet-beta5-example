@@ -9,3 +9,9 @@ debug:
 
 run:
 	docker run -it -v /Users/ben/.dnx:/home/dev/.dnx -v $(shell pwd)/WebApplication:/app -w="/app" -p 5001 benhall/aspnet-vnext-npm dnx . kestrel
+
+dockerbuild:
+	docker build -t benhall/aspnet:beta5 .
+
+dockerrun:
+	docker run -t -d -p 5001 benhall/aspnet:beta5
